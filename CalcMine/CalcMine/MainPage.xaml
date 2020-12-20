@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="Black"
+             x:Class="CalcMine.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle1" TargetType="Button">
+                <Setter Property="TextColor" Value="Olive" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="BorderColor" Value="Olive" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderRadius" Value="10" />
+            </Style>
+
+            <Style x:Key="buttonStyle2" TargetType="Button">
+                <Setter Property="TextColor" Value="Indigo" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="BorderColor" Value="Indigo" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+
+            <Style x:Key="buttonStyle3" TargetType="Button">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="Olive" />
+                <Setter Property="FontSize" Value="30" />
+               
+            </Style>
+
+            <Style x:Key="buttonStyle4" TargetType="Button">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="BorderColor" Value="Gray" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderRadius" Value="10" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding ="5" ColumnSpacing="5" RowSpacing="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+           
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="memoryText" FontSize="18" FontAttributes="Bold" Text="Memory"  Grid.Row="0"
+               BackgroundColor="Black" TextColor="Olive" 
+               HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+               LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+
+        <Label x:Name="resulText" FontSize="48" FontAttributes="Bold" Text="0"  Grid.Row="1"
+               BackgroundColor="Black" TextColor="Olive" 
+               HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+               LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+
+        <Button Text="M+" Grid.Row="2" Grid.Column="0" Style="{StaticResource buttonStyle4}" Clicked="AddToMemory"/>
+        <Button Text="M-" Grid.Row="2" Grid.Column="1" Style="{StaticResource buttonStyle4}" Clicked="NegativeMemory"/>
+        <Button Text="MR" Grid.Row="2" Grid.Column="2" Style="{StaticResource buttonStyle4}" Clicked="ReadFromMemory"/>
+        <Button Text="MC" Grid.Row="2" Grid.Column="3" Style="{StaticResource buttonStyle4}" Clicked="ClearMemory"/>
+
+        <Button Text="AC" Grid.Row="3" Grid.Column="2" Style="{StaticResource buttonStyle3}" Clicked="Clear" />
+        <Button Text="DEL" Grid.Row="3" Grid.Column="3" Style="{StaticResource buttonStyle3}" Clicked="Del"/>
+        <Button Text="xʸ" Grid.Row="3" Grid.Column="0" Style="{StaticResource buttonStyle1}"  Clicked="SelectOperation" />
+        <Button Text="-/+" Grid.Row="3" Grid.Column="1" Style="{StaticResource buttonStyle1}" Clicked="Inverted" />
+              
+        <Button Text="7" Grid.Row="4" Grid.Column="0" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="8" Grid.Row="4" Grid.Column="1" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="9" Grid.Row="4" Grid.Column="2" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+
+        <Button Text="4" Grid.Row="5" Grid.Column="0" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="5" Grid.Row="5" Grid.Column="1" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="6" Grid.Row="5" Grid.Column="2" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+
+        <Button Text="1" Grid.Row="6" Grid.Column="0" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="2" Grid.Row="6" Grid.Column="1" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="3" Grid.Row="6" Grid.Column="2" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+        <Button Text="0" Grid.Row="7" Grid.Column="0" Style="{StaticResource buttonStyle2}" Clicked ="SelectNumber" />
+
+        <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{StaticResource buttonStyle1}" Clicked="SelectOperation" />
+        <Button Text="-" Grid.Row="5" Grid.Column="3" Style="{StaticResource buttonStyle1}" Clicked="SelectOperation" />
+        <Button Text="*" Grid.Row="6" Grid.Column="3" Style="{StaticResource buttonStyle1}"  Clicked="SelectOperation" />
+
+        <Button Text="." Grid.Row="7" Grid.Column="1" Style="{StaticResource buttonStyle1}" Clicked="SelectNumber" />
+        <Button Text="%" Grid.Row="7" Grid.Column="2" Style="{StaticResource buttonStyle1}"  Clicked="SelectOperation" />
+        <Button Text="/" Grid.Row="7" Grid.Column="3" Style="{StaticResource buttonStyle1}" Clicked="SelectOperation" />
+        
+        <Button Text="SQRT" Grid.Row="8" Grid.Column="0" Style="{StaticResource buttonStyle1}" Clicked="SelectOperation"/>
+        <Button Text="pi" Grid.Row="8" Grid.Column="1" Style="{StaticResource buttonStyle1}" Clicked ="PiConst" />
+        <Button Text="=" Grid.Row="8" Grid.Column="2" Style="{StaticResource buttonStyle3}" Grid.ColumnSpan="2" Clicked ="Calculate"/>
+
+    </Grid>
+
+</ContentPage>
